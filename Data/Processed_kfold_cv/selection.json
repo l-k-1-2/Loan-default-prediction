@@ -1,0 +1,2299 @@
+{
+  "strategy": "kfold_cv",
+  "fold_scheme": {
+    "name": "random stratified K-fold",
+    "n_splits": 5,
+    "shuffle": true,
+    "seed": 42,
+    "es_frac": 0.1,
+    "es_split_seed": "42 + fold_index"
+  },
+  "fold_table": [
+    {
+      "fold": 0,
+      "fit_rows": 131400,
+      "es_rows": 14600,
+      "val_rows": 36501,
+      "val_default_rate": 0.20629571792553628
+    },
+    {
+      "fold": 1,
+      "fit_rows": 131400,
+      "es_rows": 14601,
+      "val_rows": 36500,
+      "val_default_rate": 0.20627397260273972
+    },
+    {
+      "fold": 2,
+      "fit_rows": 131400,
+      "es_rows": 14601,
+      "val_rows": 36500,
+      "val_default_rate": 0.2063013698630137
+    },
+    {
+      "fold": 3,
+      "fit_rows": 131400,
+      "es_rows": 14601,
+      "val_rows": 36500,
+      "val_default_rate": 0.2063013698630137
+    },
+    {
+      "fold": 4,
+      "fit_rows": 131400,
+      "es_rows": 14601,
+      "val_rows": 36500,
+      "val_default_rate": 0.2063013698630137
+    }
+  ],
+  "overall_default_rate": 0.20629476002871217,
+  "candidates": [
+    "disbursed_amount",
+    "asset_cost",
+    "ltv",
+    "Aadhar_flag",
+    "PAN_flag",
+    "VoterID_flag",
+    "PERFORM_CNS.SCORE",
+    "PRI.NO.OF.ACCTS",
+    "PRI.ACTIVE.ACCTS",
+    "PRI.OVERDUE.ACCTS",
+    "PRI.CURRENT.BALANCE",
+    "PRI.SANCTIONED.AMOUNT",
+    "PRI.DISBURSED.AMOUNT",
+    "PRIMARY.INSTAL.AMT",
+    "NEW.ACCTS.IN.LAST.SIX.MONTHS",
+    "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+    "NO.OF_INQUIRIES",
+    "age_at_disbursal",
+    "disb_day_of_month",
+    "days_to_month_end",
+    "avg_acct_age_months",
+    "credit_history_months",
+    "pri_overdue_share",
+    "pri_active_share",
+    "pri_utilisation",
+    "pri_disb_to_sanc",
+    "total_instal_amt",
+    "loan_to_instal",
+    "new_loan_vs_balance",
+    "delinq_share_6m",
+    "has_bureau_score",
+    "is_new_to_credit",
+    "has_any_overdue",
+    "has_recent_delinquency",
+    "has_recent_new_accts",
+    "has_inquiries",
+    "n_kyc_docs",
+    "supplier_id_loans_7d",
+    "branch_id_loans_7d",
+    "Employee_code_ID_loans_7d",
+    "branch_id",
+    "supplier_id",
+    "manufacturer_id",
+    "Current_pincode_ID",
+    "State_ID",
+    "Employee_code_ID",
+    "Employment.Type",
+    "PERFORM_CNS.SCORE.DESCRIPTION"
+  ],
+  "iv_table": [
+    {
+      "feature": "disbursed_amount",
+      "kind": "numeric",
+      "iv_raw": 0.05254554082020034,
+      "iv": 0.052127230203253105,
+      "iv_es": 0.054944773479841925,
+      "stability": 1.0558134069511227,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "asset_cost",
+      "kind": "numeric",
+      "iv_raw": 0.001555481413367339,
+      "iv": 0.0011371707964201044,
+      "iv_es": 0.000939420511442998,
+      "stability": 1.1169078844854874,
+      "stability_folds_used": 4,
+      "outcome": "floor"
+    },
+    {
+      "feature": "ltv",
+      "kind": "numeric",
+      "iv_raw": 0.06859557477774629,
+      "iv": 0.06817726416079906,
+      "iv_es": 0.06622407958324891,
+      "stability": 0.9725193723284857,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "Aadhar_flag",
+      "kind": "numeric",
+      "iv_raw": 0.010831003517717671,
+      "iv": 0.01078452456027909,
+      "iv_es": 0.010250323340962991,
+      "stability": 0.9627082468753951,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "VoterID_flag",
+          "spearman": -0.8641743677216825
+        }
+      ]
+    },
+    {
+      "feature": "PAN_flag",
+      "kind": "numeric",
+      "iv_raw": 7.691176642298233e-05,
+      "iv": 3.0432808984400705e-05,
+      "iv_es": -7.961999295898005e-05,
+      "stability": null,
+      "stability_folds_used": 0,
+      "outcome": "floor"
+    },
+    {
+      "feature": "VoterID_flag",
+      "kind": "numeric",
+      "iv_raw": 0.011757648366234108,
+      "iv": 0.011711169408795529,
+      "iv_es": 0.011685212799158125,
+      "stability": 1.0108061656963987,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "PERFORM_CNS.SCORE",
+      "kind": "numeric",
+      "iv_raw": 0.05129703206907613,
+      "iv": 0.05106463728188323,
+      "iv_es": 0.05618502254778317,
+      "stability": 1.1017499628597593,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "PRI.NO.OF.ACCTS",
+      "kind": "numeric",
+      "iv_raw": 0.013555423227024127,
+      "iv": 0.0133695073972698,
+      "iv_es": 0.01415347690655459,
+      "stability": 1.0751605716183272,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "PERFORM_CNS.SCORE",
+          "spearman": 0.8553475926365307
+        },
+        {
+          "partner": "credit_history_months",
+          "spearman": 0.9022800444701702
+        }
+      ]
+    },
+    {
+      "feature": "PRI.ACTIVE.ACCTS",
+      "kind": "numeric",
+      "iv_raw": 0.011300851464616337,
+      "iv": 0.011161414592300595,
+      "iv_es": 0.011961247919537383,
+      "stability": 1.0892054977296766,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "PRI.NO.OF.ACCTS",
+          "spearman": 0.8834473218707557
+        },
+        {
+          "partner": "PRI.CURRENT.BALANCE",
+          "spearman": 0.925108240282398
+        },
+        {
+          "partner": "PRI.SANCTIONED.AMOUNT",
+          "spearman": 0.9577621067548955
+        },
+        {
+          "partner": "PRI.DISBURSED.AMOUNT",
+          "spearman": 0.9568934376588232
+        }
+      ]
+    },
+    {
+      "feature": "PRI.OVERDUE.ACCTS",
+      "kind": "numeric",
+      "iv_raw": 0.005099400042475869,
+      "iv": 0.005052921085037286,
+      "iv_es": 0.004760010914969933,
+      "stability": 0.9959955068721632,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "pri_overdue_share",
+          "spearman": 0.9843123200192871
+        },
+        {
+          "partner": "has_any_overdue",
+          "spearman": 0.9758545880597909
+        }
+      ]
+    },
+    {
+      "feature": "PRI.CURRENT.BALANCE",
+      "kind": "numeric",
+      "iv_raw": 0.018003350101335743,
+      "iv": 0.017817434271581417,
+      "iv_es": 0.018837329758272726,
+      "stability": 1.0687042673575182,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "PRI.SANCTIONED.AMOUNT",
+          "spearman": 0.958926635678652
+        },
+        {
+          "partner": "PRI.DISBURSED.AMOUNT",
+          "spearman": 0.962622492186197
+        },
+        {
+          "partner": "new_loan_vs_balance",
+          "spearman": -0.9930077902322718
+        }
+      ]
+    },
+    {
+      "feature": "PRI.SANCTIONED.AMOUNT",
+      "kind": "numeric",
+      "iv_raw": 0.022014405133055297,
+      "iv": 0.021828489303300967,
+      "iv_es": 0.024657920040276414,
+      "stability": 1.134226783218797,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "PRI.DISBURSED.AMOUNT",
+      "kind": "numeric",
+      "iv_raw": 0.020813066580977833,
+      "iv": 0.020627150751223507,
+      "iv_es": 0.022684374753318245,
+      "stability": 1.1063662899965991,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "PRI.SANCTIONED.AMOUNT",
+          "spearman": 0.9967086337618986
+        },
+        {
+          "partner": "new_loan_vs_balance",
+          "spearman": -0.9217939844436756
+        }
+      ]
+    },
+    {
+      "feature": "PRIMARY.INSTAL.AMT",
+      "kind": "numeric",
+      "iv_raw": 0.003014926203313467,
+      "iv": 0.002875489330997722,
+      "iv_es": 0.0029709883572305706,
+      "stability": 1.187451709043768,
+      "stability_folds_used": 5,
+      "outcome": "floor"
+    },
+    {
+      "feature": "NEW.ACCTS.IN.LAST.SIX.MONTHS",
+      "kind": "numeric",
+      "iv_raw": 0.003835190871361413,
+      "iv": 0.0037887119139228312,
+      "iv_es": 0.0032429872819706947,
+      "stability": 0.8935921600828426,
+      "stability_folds_used": 5,
+      "outcome": "floor"
+    },
+    {
+      "feature": "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+      "kind": "numeric",
+      "iv_raw": 0.009497475167892268,
+      "iv": 0.00891184040568183,
+      "iv_es": 0.0068133840416229495,
+      "stability": 0.7497027539721256,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "delinq_share_6m",
+          "spearman": 0.9915340995472733
+        },
+        {
+          "partner": "has_recent_delinquency",
+          "spearman": 0.9994923489960503
+        }
+      ]
+    },
+    {
+      "feature": "NO.OF_INQUIRIES",
+      "kind": "numeric",
+      "iv_raw": 0.007790878910840756,
+      "iv": 0.007744399953402176,
+      "iv_es": 0.006835732593532301,
+      "stability": 0.8911338489164364,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "has_inquiries",
+          "spearman": 0.9978810035452075
+        }
+      ]
+    },
+    {
+      "feature": "age_at_disbursal",
+      "kind": "numeric",
+      "iv_raw": 0.009127162931019596,
+      "iv": 0.008708852314072361,
+      "iv_es": 0.011934091017753432,
+      "stability": 1.3631819924469781,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "disb_day_of_month",
+      "kind": "numeric",
+      "iv_raw": 0.006601220135003248,
+      "iv": 0.006182909518056013,
+      "iv_es": 0.005347663691609879,
+      "stability": 0.8800490511677348,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "days_to_month_end",
+      "kind": "numeric",
+      "iv_raw": 0.0053165638844799865,
+      "iv": 0.004898253267532751,
+      "iv_es": 0.003818868110636058,
+      "stability": 0.7843365531638858,
+      "stability_folds_used": 5,
+      "outcome": "floor"
+    },
+    {
+      "feature": "avg_acct_age_months",
+      "kind": "numeric",
+      "iv_raw": 0.00945703017624663,
+      "iv": 0.0092711143464923,
+      "iv_es": 0.009383401586902141,
+      "stability": 1.0317179449727505,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "credit_history_months",
+          "spearman": 0.981032814745018
+        }
+      ]
+    },
+    {
+      "feature": "credit_history_months",
+      "kind": "numeric",
+      "iv_raw": 0.01454703555540296,
+      "iv": 0.01436111972564863,
+      "iv_es": 0.013290538801711627,
+      "stability": 0.9487228128281504,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "pri_overdue_share",
+      "kind": "numeric",
+      "iv_raw": 0.04355351928946912,
+      "iv": 0.043414082417153374,
+      "iv_es": 0.04442519334176375,
+      "stability": 1.0224965595456266,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "pri_active_share",
+      "kind": "numeric",
+      "iv_raw": 0.0142717893933214,
+      "iv": 0.013946436691251327,
+      "iv_es": 0.014048140406235365,
+      "stability": 1.0163961538540187,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "pri_utilisation",
+      "kind": "numeric",
+      "iv_raw": 0.009168014984010962,
+      "iv": 0.008703225409625145,
+      "iv_es": 0.012668573412147704,
+      "stability": 1.4946979048399978,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "pri_disb_to_sanc",
+      "kind": "numeric",
+      "iv_raw": 0.033092751678153454,
+      "iv": 0.032953314805837707,
+      "iv_es": 0.03421457566518821,
+      "stability": 1.0343462931770029,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "total_instal_amt",
+      "kind": "numeric",
+      "iv_raw": 0.003377300977704685,
+      "iv": 0.0032378641053889406,
+      "iv_es": 0.002738982046429522,
+      "stability": 0.9527929321551925,
+      "stability_folds_used": 5,
+      "outcome": "floor"
+    },
+    {
+      "feature": "loan_to_instal",
+      "kind": "numeric",
+      "iv_raw": 0.006200210904772375,
+      "iv": 0.0057354213303865585,
+      "iv_es": 0.004379772093853434,
+      "stability": 0.8443734237857891,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "new_loan_vs_balance",
+      "kind": "numeric",
+      "iv_raw": 0.021629092328119846,
+      "iv": 0.021164302753734033,
+      "iv_es": 0.023136344280025173,
+      "stability": 1.1006821034267515,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "PRI.SANCTIONED.AMOUNT",
+          "spearman": -0.9124063916062366
+        }
+      ]
+    },
+    {
+      "feature": "delinq_share_6m",
+      "kind": "numeric",
+      "iv_raw": 0.023517910459151952,
+      "iv": 0.02342495254427479,
+      "iv_es": 0.022453314423115767,
+      "stability": 0.9697885136431813,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "has_bureau_score",
+      "kind": "numeric",
+      "iv_raw": 0.009006574364591409,
+      "iv": 0.008960095407152827,
+      "iv_es": 0.010169697064843367,
+      "stability": 1.1598133927626804,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "PERFORM_CNS.SCORE",
+          "spearman": 0.9249252467453982
+        },
+        {
+          "partner": "PRI.NO.OF.ACCTS",
+          "spearman": 0.927114558542497
+        },
+        {
+          "partner": "avg_acct_age_months",
+          "spearman": 0.8927030465626561
+        },
+        {
+          "partner": "credit_history_months",
+          "spearman": 0.8958627888307331
+        }
+      ]
+    },
+    {
+      "feature": "is_new_to_credit",
+      "kind": "numeric",
+      "iv_raw": 0.008685778214627377,
+      "iv": 0.008639299257188798,
+      "iv_es": 0.009584196717992854,
+      "stability": 1.1306520579650858,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "PERFORM_CNS.SCORE",
+          "spearman": -0.9156759947176257
+        },
+        {
+          "partner": "PRI.NO.OF.ACCTS",
+          "spearman": -0.9178434133977944
+        },
+        {
+          "partner": "avg_acct_age_months",
+          "spearman": -0.9030744504795148
+        },
+        {
+          "partner": "credit_history_months",
+          "spearman": -0.9044665626140408
+        },
+        {
+          "partner": "has_bureau_score",
+          "spearman": -0.9900000004753698
+        }
+      ]
+    },
+    {
+      "feature": "has_any_overdue",
+      "kind": "numeric",
+      "iv_raw": 0.011947551705305983,
+      "iv": 0.011901072747867402,
+      "iv_es": 0.011121928511433968,
+      "stability": 0.9359889236625806,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "pri_overdue_share",
+          "spearman": 0.9697820367092934
+        }
+      ]
+    },
+    {
+      "feature": "has_recent_delinquency",
+      "kind": "numeric",
+      "iv_raw": 0.00904552294788681,
+      "iv": 0.008999043990448229,
+      "iv_es": 0.007345932248823575,
+      "stability": 0.8027783081970339,
+      "stability_folds_used": 5,
+      "outcome": "redundancy",
+      "redundancy_partners": [
+        {
+          "partner": "delinq_share_6m",
+          "spearman": 0.9936433960447114
+        }
+      ]
+    },
+    {
+      "feature": "has_recent_new_accts",
+      "kind": "numeric",
+      "iv_raw": 0.006270283692377246,
+      "iv": 0.006223804734938663,
+      "iv_es": 0.00890303376085953,
+      "stability": 1.4605104564154796,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "has_inquiries",
+      "kind": "numeric",
+      "iv_raw": 0.009138904696673448,
+      "iv": 0.009092425739234869,
+      "iv_es": 0.005707761214578333,
+      "stability": 0.6334108933784158,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "n_kyc_docs",
+      "kind": "numeric",
+      "iv_raw": 0.00025456900880631956,
+      "iv": 0.0001244277249469106,
+      "iv_es": -1.2854248905204544e-05,
+      "stability": null,
+      "stability_folds_used": 0,
+      "outcome": "floor"
+    },
+    {
+      "feature": "supplier_id_loans_7d",
+      "kind": "numeric",
+      "iv_raw": 0.0035670508048204095,
+      "iv": 0.0031022612304345935,
+      "iv_es": 0.003690838562564548,
+      "stability": 1.2976441115478161,
+      "stability_folds_used": 5,
+      "outcome": "floor"
+    },
+    {
+      "feature": "branch_id_loans_7d",
+      "kind": "numeric",
+      "iv_raw": 0.004034495199236871,
+      "iv": 0.0035697056248510557,
+      "iv_es": 0.002658056201035327,
+      "stability": 0.7619445854046811,
+      "stability_folds_used": 5,
+      "outcome": "floor"
+    },
+    {
+      "feature": "Employee_code_ID_loans_7d",
+      "kind": "numeric",
+      "iv_raw": 0.008363814836459465,
+      "iv": 0.007899025262073648,
+      "iv_es": 0.006861087401800882,
+      "stability": 0.8821683548855901,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "branch_id",
+      "kind": "categorical",
+      "iv_raw": 0.07638218756379296,
+      "iv": 0.07281260368326774,
+      "iv_es": 0.07473082015025316,
+      "stability": 1.025926024416831,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "supplier_id",
+      "kind": "categorical",
+      "iv_raw": 0.08980743894410748,
+      "iv": 0.074144029779727,
+      "iv_es": 0.06309080698502509,
+      "stability": 0.848349266096497,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "manufacturer_id",
+      "kind": "categorical",
+      "iv_raw": 0.009621036809274688,
+      "iv": 0.009249205149766038,
+      "iv_es": 0.007232843811253803,
+      "stability": 0.771190189405116,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "Current_pincode_ID",
+      "kind": "categorical",
+      "iv_raw": 0.045560777405531765,
+      "iv": 0.034731180068553025,
+      "iv_es": 0.03149509772741312,
+      "stability": 0.9162566359947848,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "State_ID",
+      "kind": "categorical",
+      "iv_raw": 0.04114714970667603,
+      "iv": 0.04022686640014996,
+      "iv_es": 0.04247283149292226,
+      "stability": 1.0577422806118788,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "Employee_code_ID",
+      "kind": "categorical",
+      "iv_raw": 0.053527830791864774,
+      "iv": 0.044929223919516405,
+      "iv_es": 0.041340947437086495,
+      "stability": 0.9207836442758041,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    },
+    {
+      "feature": "Employment.Type",
+      "kind": "categorical",
+      "iv_raw": 0.004780902336885763,
+      "iv": 0.004687944422008599,
+      "iv_es": 0.005313744328776458,
+      "stability": 1.1925393899577938,
+      "stability_folds_used": 5,
+      "outcome": "floor"
+    },
+    {
+      "feature": "PERFORM_CNS.SCORE.DESCRIPTION",
+      "kind": "categorical",
+      "iv_raw": 0.06278294538512101,
+      "iv": 0.06189984519378796,
+      "iv_es": 0.06168610960592226,
+      "stability": 0.9977027899637777,
+      "stability_folds_used": 5,
+      "outcome": "kept"
+    }
+  ],
+  "drops_by_step": {
+    "floor": [
+      "asset_cost",
+      "PAN_flag",
+      "PRIMARY.INSTAL.AMT",
+      "NEW.ACCTS.IN.LAST.SIX.MONTHS",
+      "days_to_month_end",
+      "total_instal_amt",
+      "n_kyc_docs",
+      "supplier_id_loans_7d",
+      "branch_id_loans_7d",
+      "Employment.Type"
+    ],
+    "stability": [],
+    "redundancy": [
+      "Aadhar_flag",
+      "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+      "NO.OF_INQUIRIES",
+      "PRI.ACTIVE.ACCTS",
+      "PRI.CURRENT.BALANCE",
+      "PRI.DISBURSED.AMOUNT",
+      "PRI.NO.OF.ACCTS",
+      "PRI.OVERDUE.ACCTS",
+      "avg_acct_age_months",
+      "has_any_overdue",
+      "has_bureau_score",
+      "has_recent_delinquency",
+      "is_new_to_credit",
+      "new_loan_vs_balance"
+    ]
+  },
+  "redundant_pairs": [
+    {
+      "a": "Aadhar_flag",
+      "b": "VoterID_flag",
+      "spearman": -0.8641743677216825,
+      "iv_a": 0.01078452456027909,
+      "iv_b": 0.011711169408795529,
+      "dropped": "Aadhar_flag"
+    },
+    {
+      "a": "PERFORM_CNS.SCORE",
+      "b": "PRI.NO.OF.ACCTS",
+      "spearman": 0.8553475926365307,
+      "iv_a": 0.05106463728188323,
+      "iv_b": 0.0133695073972698,
+      "dropped": "PRI.NO.OF.ACCTS"
+    },
+    {
+      "a": "PERFORM_CNS.SCORE",
+      "b": "has_bureau_score",
+      "spearman": 0.9249252467453982,
+      "iv_a": 0.05106463728188323,
+      "iv_b": 0.008960095407152827,
+      "dropped": "has_bureau_score"
+    },
+    {
+      "a": "PERFORM_CNS.SCORE",
+      "b": "is_new_to_credit",
+      "spearman": -0.9156759947176257,
+      "iv_a": 0.05106463728188323,
+      "iv_b": 0.008639299257188798,
+      "dropped": "is_new_to_credit"
+    },
+    {
+      "a": "PRI.NO.OF.ACCTS",
+      "b": "PRI.ACTIVE.ACCTS",
+      "spearman": 0.8834473218707557,
+      "iv_a": 0.0133695073972698,
+      "iv_b": 0.011161414592300595,
+      "dropped": "PRI.ACTIVE.ACCTS"
+    },
+    {
+      "a": "PRI.NO.OF.ACCTS",
+      "b": "credit_history_months",
+      "spearman": 0.9022800444701702,
+      "iv_a": 0.0133695073972698,
+      "iv_b": 0.01436111972564863,
+      "dropped": "PRI.NO.OF.ACCTS"
+    },
+    {
+      "a": "PRI.NO.OF.ACCTS",
+      "b": "has_bureau_score",
+      "spearman": 0.927114558542497,
+      "iv_a": 0.0133695073972698,
+      "iv_b": 0.008960095407152827,
+      "dropped": "has_bureau_score"
+    },
+    {
+      "a": "PRI.NO.OF.ACCTS",
+      "b": "is_new_to_credit",
+      "spearman": -0.9178434133977944,
+      "iv_a": 0.0133695073972698,
+      "iv_b": 0.008639299257188798,
+      "dropped": "is_new_to_credit"
+    },
+    {
+      "a": "PRI.ACTIVE.ACCTS",
+      "b": "PRI.CURRENT.BALANCE",
+      "spearman": 0.925108240282398,
+      "iv_a": 0.011161414592300595,
+      "iv_b": 0.017817434271581417,
+      "dropped": "PRI.ACTIVE.ACCTS"
+    },
+    {
+      "a": "PRI.ACTIVE.ACCTS",
+      "b": "PRI.SANCTIONED.AMOUNT",
+      "spearman": 0.9577621067548955,
+      "iv_a": 0.011161414592300595,
+      "iv_b": 0.021828489303300967,
+      "dropped": "PRI.ACTIVE.ACCTS"
+    },
+    {
+      "a": "PRI.ACTIVE.ACCTS",
+      "b": "PRI.DISBURSED.AMOUNT",
+      "spearman": 0.9568934376588232,
+      "iv_a": 0.011161414592300595,
+      "iv_b": 0.020627150751223507,
+      "dropped": "PRI.ACTIVE.ACCTS"
+    },
+    {
+      "a": "PRI.OVERDUE.ACCTS",
+      "b": "pri_overdue_share",
+      "spearman": 0.9843123200192871,
+      "iv_a": 0.005052921085037286,
+      "iv_b": 0.043414082417153374,
+      "dropped": "PRI.OVERDUE.ACCTS"
+    },
+    {
+      "a": "PRI.OVERDUE.ACCTS",
+      "b": "has_any_overdue",
+      "spearman": 0.9758545880597909,
+      "iv_a": 0.005052921085037286,
+      "iv_b": 0.011901072747867402,
+      "dropped": "PRI.OVERDUE.ACCTS"
+    },
+    {
+      "a": "PRI.CURRENT.BALANCE",
+      "b": "PRI.SANCTIONED.AMOUNT",
+      "spearman": 0.958926635678652,
+      "iv_a": 0.017817434271581417,
+      "iv_b": 0.021828489303300967,
+      "dropped": "PRI.CURRENT.BALANCE"
+    },
+    {
+      "a": "PRI.CURRENT.BALANCE",
+      "b": "PRI.DISBURSED.AMOUNT",
+      "spearman": 0.962622492186197,
+      "iv_a": 0.017817434271581417,
+      "iv_b": 0.020627150751223507,
+      "dropped": "PRI.CURRENT.BALANCE"
+    },
+    {
+      "a": "PRI.CURRENT.BALANCE",
+      "b": "new_loan_vs_balance",
+      "spearman": -0.9930077902322718,
+      "iv_a": 0.017817434271581417,
+      "iv_b": 0.021164302753734033,
+      "dropped": "PRI.CURRENT.BALANCE"
+    },
+    {
+      "a": "PRI.SANCTIONED.AMOUNT",
+      "b": "PRI.DISBURSED.AMOUNT",
+      "spearman": 0.9967086337618986,
+      "iv_a": 0.021828489303300967,
+      "iv_b": 0.020627150751223507,
+      "dropped": "PRI.DISBURSED.AMOUNT"
+    },
+    {
+      "a": "PRI.SANCTIONED.AMOUNT",
+      "b": "new_loan_vs_balance",
+      "spearman": -0.9124063916062366,
+      "iv_a": 0.021828489303300967,
+      "iv_b": 0.021164302753734033,
+      "dropped": "new_loan_vs_balance"
+    },
+    {
+      "a": "PRI.DISBURSED.AMOUNT",
+      "b": "new_loan_vs_balance",
+      "spearman": -0.9217939844436756,
+      "iv_a": 0.020627150751223507,
+      "iv_b": 0.021164302753734033,
+      "dropped": "PRI.DISBURSED.AMOUNT"
+    },
+    {
+      "a": "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+      "b": "delinq_share_6m",
+      "spearman": 0.9915340995472733,
+      "iv_a": 0.00891184040568183,
+      "iv_b": 0.02342495254427479,
+      "dropped": "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS"
+    },
+    {
+      "a": "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+      "b": "has_recent_delinquency",
+      "spearman": 0.9994923489960503,
+      "iv_a": 0.00891184040568183,
+      "iv_b": 0.008999043990448229,
+      "dropped": "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS"
+    },
+    {
+      "a": "NO.OF_INQUIRIES",
+      "b": "has_inquiries",
+      "spearman": 0.9978810035452075,
+      "iv_a": 0.007744399953402176,
+      "iv_b": 0.009092425739234869,
+      "dropped": "NO.OF_INQUIRIES"
+    },
+    {
+      "a": "avg_acct_age_months",
+      "b": "credit_history_months",
+      "spearman": 0.981032814745018,
+      "iv_a": 0.0092711143464923,
+      "iv_b": 0.01436111972564863,
+      "dropped": "avg_acct_age_months"
+    },
+    {
+      "a": "avg_acct_age_months",
+      "b": "has_bureau_score",
+      "spearman": 0.8927030465626561,
+      "iv_a": 0.0092711143464923,
+      "iv_b": 0.008960095407152827,
+      "dropped": "has_bureau_score"
+    },
+    {
+      "a": "avg_acct_age_months",
+      "b": "is_new_to_credit",
+      "spearman": -0.9030744504795148,
+      "iv_a": 0.0092711143464923,
+      "iv_b": 0.008639299257188798,
+      "dropped": "is_new_to_credit"
+    },
+    {
+      "a": "credit_history_months",
+      "b": "has_bureau_score",
+      "spearman": 0.8958627888307331,
+      "iv_a": 0.01436111972564863,
+      "iv_b": 0.008960095407152827,
+      "dropped": "has_bureau_score"
+    },
+    {
+      "a": "credit_history_months",
+      "b": "is_new_to_credit",
+      "spearman": -0.9044665626140408,
+      "iv_a": 0.01436111972564863,
+      "iv_b": 0.008639299257188798,
+      "dropped": "is_new_to_credit"
+    },
+    {
+      "a": "pri_overdue_share",
+      "b": "has_any_overdue",
+      "spearman": 0.9697820367092934,
+      "iv_a": 0.043414082417153374,
+      "iv_b": 0.011901072747867402,
+      "dropped": "has_any_overdue"
+    },
+    {
+      "a": "delinq_share_6m",
+      "b": "has_recent_delinquency",
+      "spearman": 0.9936433960447114,
+      "iv_a": 0.02342495254427479,
+      "iv_b": 0.008999043990448229,
+      "dropped": "has_recent_delinquency"
+    },
+    {
+      "a": "has_bureau_score",
+      "b": "is_new_to_credit",
+      "spearman": -0.9900000004753698,
+      "iv_a": 0.008960095407152827,
+      "iv_b": 0.008639299257188798,
+      "dropped": "is_new_to_credit"
+    }
+  ],
+  "pool": [
+    "disbursed_amount",
+    "ltv",
+    "VoterID_flag",
+    "PERFORM_CNS.SCORE",
+    "PRI.SANCTIONED.AMOUNT",
+    "age_at_disbursal",
+    "disb_day_of_month",
+    "credit_history_months",
+    "pri_overdue_share",
+    "pri_active_share",
+    "pri_utilisation",
+    "pri_disb_to_sanc",
+    "loan_to_instal",
+    "delinq_share_6m",
+    "has_recent_new_accts",
+    "has_inquiries",
+    "Employee_code_ID_loans_7d",
+    "branch_id",
+    "supplier_id",
+    "manufacturer_id",
+    "Current_pincode_ID",
+    "State_ID",
+    "Employee_code_ID",
+    "PERFORM_CNS.SCORE.DESCRIPTION"
+  ],
+  "C_iv02": [
+    "disbursed_amount",
+    "ltv",
+    "PERFORM_CNS.SCORE",
+    "PRI.SANCTIONED.AMOUNT",
+    "PRI.DISBURSED.AMOUNT",
+    "pri_overdue_share",
+    "pri_disb_to_sanc",
+    "new_loan_vs_balance",
+    "delinq_share_6m",
+    "branch_id",
+    "supplier_id",
+    "Current_pincode_ID",
+    "State_ID",
+    "Employee_code_ID",
+    "PERFORM_CNS.SCORE.DESCRIPTION"
+  ],
+  "lightgbm": {
+    "selection_table": [
+      {
+        "names": [
+          "C_all"
+        ],
+        "features": [
+          "disbursed_amount",
+          "asset_cost",
+          "ltv",
+          "Aadhar_flag",
+          "PAN_flag",
+          "VoterID_flag",
+          "PERFORM_CNS.SCORE",
+          "PRI.NO.OF.ACCTS",
+          "PRI.ACTIVE.ACCTS",
+          "PRI.OVERDUE.ACCTS",
+          "PRI.CURRENT.BALANCE",
+          "PRI.SANCTIONED.AMOUNT",
+          "PRI.DISBURSED.AMOUNT",
+          "PRIMARY.INSTAL.AMT",
+          "NEW.ACCTS.IN.LAST.SIX.MONTHS",
+          "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+          "NO.OF_INQUIRIES",
+          "age_at_disbursal",
+          "disb_day_of_month",
+          "days_to_month_end",
+          "avg_acct_age_months",
+          "credit_history_months",
+          "pri_overdue_share",
+          "pri_active_share",
+          "pri_utilisation",
+          "pri_disb_to_sanc",
+          "total_instal_amt",
+          "loan_to_instal",
+          "new_loan_vs_balance",
+          "delinq_share_6m",
+          "has_bureau_score",
+          "is_new_to_credit",
+          "has_any_overdue",
+          "has_recent_delinquency",
+          "has_recent_new_accts",
+          "has_inquiries",
+          "n_kyc_docs",
+          "supplier_id_loans_7d",
+          "branch_id_loans_7d",
+          "Employee_code_ID_loans_7d",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "State_ID",
+          "Employee_code_ID",
+          "Employment.Type",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 48,
+        "fold_auc": [
+          0.6598391403263867,
+          0.6650652122299683,
+          0.6674487850003736,
+          0.6594840383031215,
+          0.6537149159660977
+        ],
+        "mean_auc": 0.6611104183651895,
+        "n_trees": [
+          165,
+          425,
+          390,
+          364,
+          182
+        ],
+        "diff_to_best": 0.0,
+        "paired_se": 0.0,
+        "qualifies": true,
+        "chosen": true
+      },
+      {
+        "names": [
+          "C_pool"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "VoterID_flag",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "disb_day_of_month",
+          "credit_history_months",
+          "pri_overdue_share",
+          "pri_active_share",
+          "pri_utilisation",
+          "pri_disb_to_sanc",
+          "loan_to_instal",
+          "delinq_share_6m",
+          "has_recent_new_accts",
+          "has_inquiries",
+          "Employee_code_ID_loans_7d",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "State_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 24,
+        "fold_auc": [
+          0.6583295962537618,
+          0.6633135510236009,
+          0.6627734648794077,
+          0.6570868132578419,
+          0.6503333576292002
+        ],
+        "mean_auc": 0.6583673566087624,
+        "n_trees": [
+          498,
+          322,
+          89,
+          200,
+          496
+        ],
+        "diff_to_best": -0.0027430617564270674,
+        "paired_se": 0.0005816074375509369,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "C_iv02"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "PRI.DISBURSED.AMOUNT",
+          "pri_overdue_share",
+          "pri_disb_to_sanc",
+          "new_loan_vs_balance",
+          "delinq_share_6m",
+          "branch_id",
+          "supplier_id",
+          "Current_pincode_ID",
+          "State_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 15,
+        "fold_auc": [
+          0.6510051311557928,
+          0.6580794134734989,
+          0.658938965115261,
+          0.6492400711272961,
+          0.6447721322740335
+        ],
+        "mean_auc": 0.6524071426291764,
+        "n_trees": [
+          198,
+          113,
+          128,
+          105,
+          185
+        ],
+        "diff_to_best": -0.008703275736013105,
+        "paired_se": 0.000521312657919893,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_22"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "VoterID_flag",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "disb_day_of_month",
+          "credit_history_months",
+          "pri_overdue_share",
+          "pri_utilisation",
+          "pri_disb_to_sanc",
+          "loan_to_instal",
+          "delinq_share_6m",
+          "has_recent_new_accts",
+          "has_inquiries",
+          "Employee_code_ID_loans_7d",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 22,
+        "fold_auc": [
+          0.6574304464284774,
+          0.6636214351302218,
+          0.664391663583842,
+          0.6570611261088428,
+          0.6505544087600811
+        ],
+        "mean_auc": 0.658611816002293,
+        "n_trees": [
+          404,
+          309,
+          310,
+          279,
+          177
+        ],
+        "diff_to_best": -0.0024986023628965404,
+        "paired_se": 0.000306311150964211,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_18"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "credit_history_months",
+          "pri_overdue_share",
+          "pri_utilisation",
+          "pri_disb_to_sanc",
+          "loan_to_instal",
+          "delinq_share_6m",
+          "has_inquiries",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 18,
+        "fold_auc": [
+          0.6572693085080318,
+          0.6623855364792706,
+          0.6644341286333207,
+          0.6563407719942919,
+          0.6497629754827199
+        ],
+        "mean_auc": 0.6580385442195269,
+        "n_trees": [
+          359,
+          349,
+          240,
+          278,
+          380
+        ],
+        "diff_to_best": -0.0030718741456625897,
+        "paired_se": 0.00024379843655688674,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_15"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "pri_overdue_share",
+          "pri_disb_to_sanc",
+          "delinq_share_6m",
+          "has_inquiries",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 15,
+        "fold_auc": [
+          0.6550896571343519,
+          0.6604128253360417,
+          0.6635447532158788,
+          0.6531436490833353,
+          0.647730355760252
+        ],
+        "mean_auc": 0.6559842481059719,
+        "n_trees": [
+          209,
+          325,
+          206,
+          91,
+          242
+        ],
+        "diff_to_best": -0.0051261702592176215,
+        "paired_se": 0.00045117331813192496,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_12"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PRI.SANCTIONED.AMOUNT",
+          "pri_overdue_share",
+          "pri_disb_to_sanc",
+          "delinq_share_6m",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 12,
+        "fold_auc": [
+          0.651039531540516,
+          0.6573906725573154,
+          0.6593983059821465,
+          0.6505494441518244,
+          0.6459515544999841
+        ],
+        "mean_auc": 0.6528659017463573,
+        "n_trees": [
+          309,
+          157,
+          145,
+          148,
+          185
+        ],
+        "diff_to_best": -0.008244516618832276,
+        "paired_se": 0.000262523228051601,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_10"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PRI.SANCTIONED.AMOUNT",
+          "pri_disb_to_sanc",
+          "delinq_share_6m",
+          "branch_id",
+          "supplier_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 10,
+        "fold_auc": [
+          0.6500089845764618,
+          0.6562505663384565,
+          0.6573636967490755,
+          0.6477363999301379,
+          0.6438472642624762
+        ],
+        "mean_auc": 0.6510413823713217,
+        "n_trees": [
+          94,
+          103,
+          145,
+          126,
+          176
+        ],
+        "diff_to_best": -0.010069035993867992,
+        "paired_se": 0.0004737656358546336,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_8"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PRI.SANCTIONED.AMOUNT",
+          "delinq_share_6m",
+          "branch_id",
+          "supplier_id",
+          "Current_pincode_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 8,
+        "fold_auc": [
+          0.6471485406732922,
+          0.6539228324738147,
+          0.6546150480347623,
+          0.6472485068356192,
+          0.6419273292287071
+        ],
+        "mean_auc": 0.6489724514492391,
+        "n_trees": [
+          119,
+          119,
+          129,
+          201,
+          177
+        ],
+        "diff_to_best": -0.01213796691595046,
+        "paired_se": 0.0003092715480098257,
+        "qualifies": false,
+        "chosen": false
+      }
+    ],
+    "best_configuration": [
+      "C_all"
+    ],
+    "chosen_configuration": [
+      "C_all"
+    ],
+    "chosen_features": [
+      "disbursed_amount",
+      "asset_cost",
+      "ltv",
+      "Aadhar_flag",
+      "PAN_flag",
+      "VoterID_flag",
+      "PERFORM_CNS.SCORE",
+      "PRI.NO.OF.ACCTS",
+      "PRI.ACTIVE.ACCTS",
+      "PRI.OVERDUE.ACCTS",
+      "PRI.CURRENT.BALANCE",
+      "PRI.SANCTIONED.AMOUNT",
+      "PRI.DISBURSED.AMOUNT",
+      "PRIMARY.INSTAL.AMT",
+      "NEW.ACCTS.IN.LAST.SIX.MONTHS",
+      "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+      "NO.OF_INQUIRIES",
+      "age_at_disbursal",
+      "disb_day_of_month",
+      "days_to_month_end",
+      "avg_acct_age_months",
+      "credit_history_months",
+      "pri_overdue_share",
+      "pri_active_share",
+      "pri_utilisation",
+      "pri_disb_to_sanc",
+      "total_instal_amt",
+      "loan_to_instal",
+      "new_loan_vs_balance",
+      "delinq_share_6m",
+      "has_bureau_score",
+      "is_new_to_credit",
+      "has_any_overdue",
+      "has_recent_delinquency",
+      "has_recent_new_accts",
+      "has_inquiries",
+      "n_kyc_docs",
+      "supplier_id_loans_7d",
+      "branch_id_loans_7d",
+      "Employee_code_ID_loans_7d",
+      "branch_id",
+      "supplier_id",
+      "manufacturer_id",
+      "Current_pincode_ID",
+      "State_ID",
+      "Employee_code_ID",
+      "Employment.Type",
+      "PERFORM_CNS.SCORE.DESCRIPTION"
+    ],
+    "importance_C_all": {
+      "disbursed_amount": 0.005508916449248047,
+      "asset_cost": -4.353540271507436e-05,
+      "ltv": 0.03984249996937773,
+      "Aadhar_flag": 1.4138297952455926e-06,
+      "PAN_flag": 2.635038307228961e-05,
+      "VoterID_flag": 0.00013547547506155647,
+      "PERFORM_CNS.SCORE": 0.002115270285763319,
+      "PRI.NO.OF.ACCTS": 0.00027795110347869444,
+      "PRI.ACTIVE.ACCTS": 0.00018854468716183643,
+      "PRI.OVERDUE.ACCTS": 0.00019645065222066992,
+      "PRI.CURRENT.BALANCE": 0.00015264151438243445,
+      "PRI.SANCTIONED.AMOUNT": 0.002189065980809783,
+      "PRI.DISBURSED.AMOUNT": 0.0007516766023677679,
+      "PRIMARY.INSTAL.AMT": 0.00025735841743333617,
+      "NEW.ACCTS.IN.LAST.SIX.MONTHS": 0.0002931293387549309,
+      "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS": 0.000896081557194428,
+      "NO.OF_INQUIRIES": 0.003317982229370786,
+      "age_at_disbursal": 0.003437222177608764,
+      "disb_day_of_month": 0.0003728608204316568,
+      "days_to_month_end": 0.00016963091475758293,
+      "avg_acct_age_months": 0.00010820404268857923,
+      "credit_history_months": 0.0010027799287519366,
+      "pri_overdue_share": 0.0032621826175261914,
+      "pri_active_share": 0.00011181833767121376,
+      "pri_utilisation": 0.0006081908855747627,
+      "pri_disb_to_sanc": 0.003919335063479419,
+      "total_instal_amt": 0.0001690275659715542,
+      "loan_to_instal": 0.001144973284711585,
+      "new_loan_vs_balance": 0.00042520071057376246,
+      "delinq_share_6m": 0.0012932253562646084,
+      "has_bureau_score": 0.0,
+      "is_new_to_credit": 1.449431454932556e-07,
+      "has_any_overdue": -1.1011129884256718e-06,
+      "has_recent_delinquency": 9.921071393272179e-05,
+      "has_recent_new_accts": 2.3272612627282346e-05,
+      "has_inquiries": 7.903291789856935e-05,
+      "n_kyc_docs": -2.8302256002269806e-05,
+      "supplier_id_loans_7d": 0.0002861563654597813,
+      "branch_id_loans_7d": 1.5216105013019993e-07,
+      "Employee_code_ID_loans_7d": 0.00036775034883319195,
+      "branch_id": 0.02351455799996109,
+      "supplier_id": 0.009653281242245945,
+      "manufacturer_id": 0.0021759799046480325,
+      "Current_pincode_ID": 0.004377560420745256,
+      "State_ID": 0.0001317899941475427,
+      "Employee_code_ID": 0.003593135134685703,
+      "Employment.Type": 0.004427596681187988,
+      "PERFORM_CNS.SCORE.DESCRIPTION": 0.00829970446008493
+    },
+    "importance_C_pool": {
+      "disbursed_amount": 0.004658480660872879,
+      "ltv": 0.04018567184956076,
+      "VoterID_flag": 0.0002805800601049994,
+      "PERFORM_CNS.SCORE": 0.0025049791539025535,
+      "PRI.SANCTIONED.AMOUNT": 0.005323869188867011,
+      "age_at_disbursal": 0.0023822282014166847,
+      "disb_day_of_month": 0.0004927274208333572,
+      "credit_history_months": 0.0006612964702376193,
+      "pri_overdue_share": 0.0027881086072673476,
+      "pri_active_share": 0.00011360145605160036,
+      "pri_utilisation": 0.0006025500776823807,
+      "pri_disb_to_sanc": 0.0035606979471369737,
+      "loan_to_instal": 0.001464297035433811,
+      "delinq_share_6m": 0.0042460935355782175,
+      "has_recent_new_accts": 0.0002900331959981332,
+      "has_inquiries": 0.002535548610362559,
+      "Employee_code_ID_loans_7d": 0.00044685154037050383,
+      "branch_id": 0.02811867019293307,
+      "supplier_id": 0.012238179203353869,
+      "manufacturer_id": 0.002785793705350718,
+      "Current_pincode_ID": 0.005307723988102812,
+      "State_ID": 0.00012414650379746945,
+      "Employee_code_ID": 0.0028088296962482267,
+      "PERFORM_CNS.SCORE.DESCRIPTION": 0.011378833780630433
+    },
+    "rank_C_all": [
+      "ltv",
+      "branch_id",
+      "supplier_id",
+      "PERFORM_CNS.SCORE.DESCRIPTION",
+      "disbursed_amount",
+      "Employment.Type",
+      "Current_pincode_ID",
+      "pri_disb_to_sanc",
+      "Employee_code_ID",
+      "age_at_disbursal",
+      "NO.OF_INQUIRIES",
+      "pri_overdue_share",
+      "PRI.SANCTIONED.AMOUNT",
+      "manufacturer_id",
+      "PERFORM_CNS.SCORE",
+      "delinq_share_6m",
+      "loan_to_instal",
+      "credit_history_months",
+      "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+      "PRI.DISBURSED.AMOUNT",
+      "pri_utilisation",
+      "new_loan_vs_balance",
+      "disb_day_of_month",
+      "Employee_code_ID_loans_7d",
+      "NEW.ACCTS.IN.LAST.SIX.MONTHS",
+      "supplier_id_loans_7d",
+      "PRI.NO.OF.ACCTS",
+      "PRIMARY.INSTAL.AMT",
+      "PRI.OVERDUE.ACCTS",
+      "PRI.ACTIVE.ACCTS",
+      "days_to_month_end",
+      "total_instal_amt",
+      "PRI.CURRENT.BALANCE",
+      "VoterID_flag",
+      "State_ID",
+      "pri_active_share",
+      "avg_acct_age_months",
+      "has_recent_delinquency",
+      "has_inquiries",
+      "PAN_flag",
+      "has_recent_new_accts",
+      "Aadhar_flag",
+      "branch_id_loans_7d",
+      "is_new_to_credit",
+      "has_bureau_score",
+      "has_any_overdue",
+      "n_kyc_docs",
+      "asset_cost"
+    ],
+    "rank_C_pool": [
+      "ltv",
+      "branch_id",
+      "supplier_id",
+      "PERFORM_CNS.SCORE.DESCRIPTION",
+      "PRI.SANCTIONED.AMOUNT",
+      "Current_pincode_ID",
+      "disbursed_amount",
+      "delinq_share_6m",
+      "pri_disb_to_sanc",
+      "Employee_code_ID",
+      "pri_overdue_share",
+      "manufacturer_id",
+      "has_inquiries",
+      "PERFORM_CNS.SCORE",
+      "age_at_disbursal",
+      "loan_to_instal",
+      "credit_history_months",
+      "pri_utilisation",
+      "disb_day_of_month",
+      "Employee_code_ID_loans_7d",
+      "has_recent_new_accts",
+      "VoterID_flag",
+      "State_ID",
+      "pri_active_share"
+    ]
+  },
+  "catboost": {
+    "selection_table": [
+      {
+        "names": [
+          "C_all"
+        ],
+        "features": [
+          "disbursed_amount",
+          "asset_cost",
+          "ltv",
+          "Aadhar_flag",
+          "PAN_flag",
+          "VoterID_flag",
+          "PERFORM_CNS.SCORE",
+          "PRI.NO.OF.ACCTS",
+          "PRI.ACTIVE.ACCTS",
+          "PRI.OVERDUE.ACCTS",
+          "PRI.CURRENT.BALANCE",
+          "PRI.SANCTIONED.AMOUNT",
+          "PRI.DISBURSED.AMOUNT",
+          "PRIMARY.INSTAL.AMT",
+          "NEW.ACCTS.IN.LAST.SIX.MONTHS",
+          "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+          "NO.OF_INQUIRIES",
+          "age_at_disbursal",
+          "disb_day_of_month",
+          "days_to_month_end",
+          "avg_acct_age_months",
+          "credit_history_months",
+          "pri_overdue_share",
+          "pri_active_share",
+          "pri_utilisation",
+          "pri_disb_to_sanc",
+          "total_instal_amt",
+          "loan_to_instal",
+          "new_loan_vs_balance",
+          "delinq_share_6m",
+          "has_bureau_score",
+          "is_new_to_credit",
+          "has_any_overdue",
+          "has_recent_delinquency",
+          "has_recent_new_accts",
+          "has_inquiries",
+          "n_kyc_docs",
+          "supplier_id_loans_7d",
+          "branch_id_loans_7d",
+          "Employee_code_ID_loans_7d",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "State_ID",
+          "Employee_code_ID",
+          "Employment.Type",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 48,
+        "fold_auc": [
+          0.6776267635497384,
+          0.682310169802212,
+          0.682122464004298,
+          0.6765166557335265,
+          0.6691882246643388
+        ],
+        "mean_auc": 0.6775528555508228,
+        "n_trees": [
+          1021,
+          1122,
+          619,
+          831,
+          1797
+        ],
+        "diff_to_best": 0.0,
+        "paired_se": 0.0,
+        "qualifies": true,
+        "chosen": true
+      },
+      {
+        "names": [
+          "C_pool"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "VoterID_flag",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "disb_day_of_month",
+          "credit_history_months",
+          "pri_overdue_share",
+          "pri_active_share",
+          "pri_utilisation",
+          "pri_disb_to_sanc",
+          "loan_to_instal",
+          "delinq_share_6m",
+          "has_recent_new_accts",
+          "has_inquiries",
+          "Employee_code_ID_loans_7d",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "State_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 24,
+        "fold_auc": [
+          0.6740239896442672,
+          0.6792056528157399,
+          0.6794181323262926,
+          0.6733279194807469,
+          0.6650028444500676
+        ],
+        "mean_auc": 0.6741957077434229,
+        "n_trees": [
+          996,
+          1100,
+          774,
+          577,
+          687
+        ],
+        "diff_to_best": -0.0033571478073999073,
+        "paired_se": 0.00025146120794819395,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "C_iv02"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "PRI.DISBURSED.AMOUNT",
+          "pri_overdue_share",
+          "pri_disb_to_sanc",
+          "new_loan_vs_balance",
+          "delinq_share_6m",
+          "branch_id",
+          "supplier_id",
+          "Current_pincode_ID",
+          "State_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 15,
+        "fold_auc": [
+          0.6654371548816757,
+          0.6718706170733046,
+          0.6718892741082615,
+          0.6675585060517337,
+          0.6574824485282893
+        ],
+        "mean_auc": 0.666847600128653,
+        "n_trees": [
+          621,
+          1262,
+          501,
+          600,
+          2097
+        ],
+        "diff_to_best": -0.010705255422169779,
+        "paired_se": 0.00057228351835974,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_22"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "disb_day_of_month",
+          "credit_history_months",
+          "pri_overdue_share",
+          "pri_active_share",
+          "pri_utilisation",
+          "pri_disb_to_sanc",
+          "loan_to_instal",
+          "delinq_share_6m",
+          "has_recent_new_accts",
+          "has_inquiries",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "State_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 22,
+        "fold_auc": [
+          0.674480034827152,
+          0.6792049972213112,
+          0.6794792249710169,
+          0.6735759481920437,
+          0.6653939574803994
+        ],
+        "mean_auc": 0.6744268325383846,
+        "n_trees": [
+          647,
+          1105,
+          955,
+          580,
+          830
+        ],
+        "diff_to_best": -0.003126023012438095,
+        "paired_se": 0.00018905500971668344,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_18"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "pri_overdue_share",
+          "pri_active_share",
+          "pri_utilisation",
+          "pri_disb_to_sanc",
+          "loan_to_instal",
+          "delinq_share_6m",
+          "has_inquiries",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 18,
+        "fold_auc": [
+          0.6727967583831485,
+          0.6755984095169132,
+          0.6776244234888773,
+          0.672251149584151,
+          0.6647028409202907
+        ],
+        "mean_auc": 0.6725947163786762,
+        "n_trees": [
+          769,
+          619,
+          807,
+          842,
+          1517
+        ],
+        "diff_to_best": -0.004958139172146603,
+        "paired_se": 0.0004475787251883189,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_15"
+        ],
+        "features": [
+          "disbursed_amount",
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "pri_overdue_share",
+          "pri_disb_to_sanc",
+          "delinq_share_6m",
+          "has_inquiries",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 15,
+        "fold_auc": [
+          0.670958605718417,
+          0.6753296891543945,
+          0.6757908281727537,
+          0.6717207753957133,
+          0.661341090591036
+        ],
+        "mean_auc": 0.6710281978064628,
+        "n_trees": [
+          753,
+          1243,
+          296,
+          539,
+          1592
+        ],
+        "diff_to_best": -0.006524657744359841,
+        "paired_se": 0.0005001619345323191,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_12"
+        ],
+        "features": [
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "pri_overdue_share",
+          "pri_disb_to_sanc",
+          "delinq_share_6m",
+          "branch_id",
+          "supplier_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 12,
+        "fold_auc": [
+          0.6654975944942516,
+          0.6720745780015455,
+          0.6709033134519797,
+          0.6671048815897381,
+          0.6579048803061829
+        ],
+        "mean_auc": 0.6666970495687397,
+        "n_trees": [
+          411,
+          970,
+          634,
+          867,
+          1297
+        ],
+        "diff_to_best": -0.010855805982083178,
+        "paired_se": 0.000469369547226995,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_10"
+        ],
+        "features": [
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "age_at_disbursal",
+          "pri_disb_to_sanc",
+          "branch_id",
+          "supplier_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 10,
+        "fold_auc": [
+          0.6629870035809496,
+          0.6684255004428494,
+          0.6685525943630838,
+          0.6635951212982611,
+          0.6542894100734331
+        ],
+        "mean_auc": 0.6635699259517154,
+        "n_trees": [
+          334,
+          852,
+          589,
+          614,
+          909
+        ],
+        "diff_to_best": -0.01398292959910732,
+        "paired_se": 0.0003589641172940445,
+        "qualifies": false,
+        "chosen": false
+      },
+      {
+        "names": [
+          "top_8"
+        ],
+        "features": [
+          "ltv",
+          "PERFORM_CNS.SCORE",
+          "PRI.SANCTIONED.AMOUNT",
+          "branch_id",
+          "supplier_id",
+          "Current_pincode_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS.SCORE.DESCRIPTION"
+        ],
+        "n_features": 8,
+        "fold_auc": [
+          0.6594669771662948,
+          0.6657241900760067,
+          0.6646883894636618,
+          0.660229976423841,
+          0.6517308490121897
+        ],
+        "mean_auc": 0.6603680764283988,
+        "n_trees": [
+          317,
+          929,
+          478,
+          715,
+          1131
+        ],
+        "diff_to_best": -0.017184779122423954,
+        "paired_se": 0.0003355771314581376,
+        "qualifies": false,
+        "chosen": false
+      }
+    ],
+    "best_configuration": [
+      "C_all"
+    ],
+    "chosen_configuration": [
+      "C_all"
+    ],
+    "chosen_features": [
+      "disbursed_amount",
+      "asset_cost",
+      "ltv",
+      "Aadhar_flag",
+      "PAN_flag",
+      "VoterID_flag",
+      "PERFORM_CNS.SCORE",
+      "PRI.NO.OF.ACCTS",
+      "PRI.ACTIVE.ACCTS",
+      "PRI.OVERDUE.ACCTS",
+      "PRI.CURRENT.BALANCE",
+      "PRI.SANCTIONED.AMOUNT",
+      "PRI.DISBURSED.AMOUNT",
+      "PRIMARY.INSTAL.AMT",
+      "NEW.ACCTS.IN.LAST.SIX.MONTHS",
+      "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+      "NO.OF_INQUIRIES",
+      "age_at_disbursal",
+      "disb_day_of_month",
+      "days_to_month_end",
+      "avg_acct_age_months",
+      "credit_history_months",
+      "pri_overdue_share",
+      "pri_active_share",
+      "pri_utilisation",
+      "pri_disb_to_sanc",
+      "total_instal_amt",
+      "loan_to_instal",
+      "new_loan_vs_balance",
+      "delinq_share_6m",
+      "has_bureau_score",
+      "is_new_to_credit",
+      "has_any_overdue",
+      "has_recent_delinquency",
+      "has_recent_new_accts",
+      "has_inquiries",
+      "n_kyc_docs",
+      "supplier_id_loans_7d",
+      "branch_id_loans_7d",
+      "Employee_code_ID_loans_7d",
+      "branch_id",
+      "supplier_id",
+      "manufacturer_id",
+      "Current_pincode_ID",
+      "State_ID",
+      "Employee_code_ID",
+      "Employment.Type",
+      "PERFORM_CNS.SCORE.DESCRIPTION"
+    ],
+    "importance_C_all": {
+      "disbursed_amount": 0.000683146778579391,
+      "asset_cost": -8.228772704801379e-05,
+      "ltv": 0.00430681445834253,
+      "Aadhar_flag": 3.495231606664984e-06,
+      "PAN_flag": 3.258714585171462e-05,
+      "VoterID_flag": 4.630468649970965e-05,
+      "PERFORM_CNS.SCORE": 0.0006184316043026162,
+      "PRI.NO.OF.ACCTS": 3.867027284139014e-05,
+      "PRI.ACTIVE.ACCTS": 2.4379248852435252e-05,
+      "PRI.OVERDUE.ACCTS": -1.577056949283451e-05,
+      "PRI.CURRENT.BALANCE": 9.868813900254513e-05,
+      "PRI.SANCTIONED.AMOUNT": 0.0003522424483814013,
+      "PRI.DISBURSED.AMOUNT": 0.00020225661305030008,
+      "PRIMARY.INSTAL.AMT": 6.280081721573571e-05,
+      "NEW.ACCTS.IN.LAST.SIX.MONTHS": 6.054706534504017e-05,
+      "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS": 8.355170765774745e-05,
+      "NO.OF_INQUIRIES": 0.00020708037373493582,
+      "age_at_disbursal": 0.0008117870497839029,
+      "disb_day_of_month": 5.230616933961097e-05,
+      "days_to_month_end": 0.00019816833793114832,
+      "avg_acct_age_months": 7.603277696613954e-05,
+      "credit_history_months": 0.00017753452589313047,
+      "pri_overdue_share": 0.00046223763820771866,
+      "pri_active_share": 0.00012213683902453364,
+      "pri_utilisation": 0.00021294821290231966,
+      "pri_disb_to_sanc": 0.0004803345267924031,
+      "total_instal_amt": 2.5064291606080594e-05,
+      "loan_to_instal": 0.00011305644090953137,
+      "new_loan_vs_balance": 8.545258389398199e-05,
+      "delinq_share_6m": 9.205271559104e-05,
+      "has_bureau_score": 1.2278615447058882e-06,
+      "is_new_to_credit": -2.4144804510850547e-06,
+      "has_any_overdue": 6.797490664967044e-06,
+      "has_recent_delinquency": 4.9006435023546406e-05,
+      "has_recent_new_accts": 7.434677420165015e-05,
+      "has_inquiries": 4.215681995427545e-05,
+      "n_kyc_docs": 4.058513874897196e-05,
+      "supplier_id_loans_7d": -2.9003731499221974e-05,
+      "branch_id_loans_7d": -1.7787493589738188e-05,
+      "Employee_code_ID_loans_7d": 1.2833727252836712e-05,
+      "branch_id": 0.0007873179493807374,
+      "supplier_id": 0.0005435302902748203,
+      "manufacturer_id": 0.00030512487074739117,
+      "Current_pincode_ID": 0.0007018322649962789,
+      "State_ID": 0.00015252994852066882,
+      "Employee_code_ID": 0.0014960847970627042,
+      "Employment.Type": 0.0006631294725106865,
+      "PERFORM_CNS.SCORE.DESCRIPTION": 0.000904278829266824
+    },
+    "importance_C_pool": {
+      "disbursed_amount": 0.0003409472593641549,
+      "ltv": 0.004831185628984002,
+      "VoterID_flag": 9.030009982097242e-05,
+      "PERFORM_CNS.SCORE": 0.0006551164882978355,
+      "PRI.SANCTIONED.AMOUNT": 0.001384157419550691,
+      "age_at_disbursal": 0.0005592925417331695,
+      "disb_day_of_month": 0.00020773149098766153,
+      "credit_history_months": 0.00014710462061587882,
+      "pri_overdue_share": 0.00047784615959769463,
+      "pri_active_share": 0.000292102913360337,
+      "pri_utilisation": 0.00030483934692059344,
+      "pri_disb_to_sanc": 0.0005312640673833969,
+      "loan_to_instal": 0.0002491567205775591,
+      "delinq_share_6m": 0.00046946186092640114,
+      "has_recent_new_accts": 0.00024004297352093752,
+      "has_inquiries": 0.0003451544433534126,
+      "Employee_code_ID_loans_7d": 1.3151759131246887e-05,
+      "branch_id": 0.0009799945825395653,
+      "supplier_id": 0.0006440635795210203,
+      "manufacturer_id": 0.00034593109357350567,
+      "Current_pincode_ID": 0.0007894210672006684,
+      "State_ID": 0.00012892003807221295,
+      "Employee_code_ID": 0.0017934344098595235,
+      "PERFORM_CNS.SCORE.DESCRIPTION": 0.0008656041607970825
+    },
+    "rank_C_all": [
+      "ltv",
+      "Employee_code_ID",
+      "PERFORM_CNS.SCORE.DESCRIPTION",
+      "age_at_disbursal",
+      "branch_id",
+      "Current_pincode_ID",
+      "disbursed_amount",
+      "Employment.Type",
+      "PERFORM_CNS.SCORE",
+      "supplier_id",
+      "pri_disb_to_sanc",
+      "pri_overdue_share",
+      "PRI.SANCTIONED.AMOUNT",
+      "manufacturer_id",
+      "pri_utilisation",
+      "NO.OF_INQUIRIES",
+      "PRI.DISBURSED.AMOUNT",
+      "days_to_month_end",
+      "credit_history_months",
+      "State_ID",
+      "pri_active_share",
+      "loan_to_instal",
+      "PRI.CURRENT.BALANCE",
+      "delinq_share_6m",
+      "new_loan_vs_balance",
+      "DELINQUENT.ACCTS.IN.LAST.SIX.MONTHS",
+      "avg_acct_age_months",
+      "has_recent_new_accts",
+      "PRIMARY.INSTAL.AMT",
+      "NEW.ACCTS.IN.LAST.SIX.MONTHS",
+      "disb_day_of_month",
+      "has_recent_delinquency",
+      "VoterID_flag",
+      "has_inquiries",
+      "n_kyc_docs",
+      "PRI.NO.OF.ACCTS",
+      "PAN_flag",
+      "total_instal_amt",
+      "PRI.ACTIVE.ACCTS",
+      "Employee_code_ID_loans_7d",
+      "has_any_overdue",
+      "Aadhar_flag",
+      "has_bureau_score",
+      "is_new_to_credit",
+      "PRI.OVERDUE.ACCTS",
+      "branch_id_loans_7d",
+      "supplier_id_loans_7d",
+      "asset_cost"
+    ],
+    "rank_C_pool": [
+      "ltv",
+      "Employee_code_ID",
+      "PRI.SANCTIONED.AMOUNT",
+      "branch_id",
+      "PERFORM_CNS.SCORE.DESCRIPTION",
+      "Current_pincode_ID",
+      "PERFORM_CNS.SCORE",
+      "supplier_id",
+      "age_at_disbursal",
+      "pri_disb_to_sanc",
+      "pri_overdue_share",
+      "delinq_share_6m",
+      "manufacturer_id",
+      "has_inquiries",
+      "disbursed_amount",
+      "pri_utilisation",
+      "pri_active_share",
+      "loan_to_instal",
+      "has_recent_new_accts",
+      "disb_day_of_month",
+      "credit_history_months",
+      "State_ID",
+      "VoterID_flag",
+      "Employee_code_ID_loans_7d"
+    ]
+  }
+}
